@@ -1,0 +1,83 @@
+---
+import { Image, Picture } from "astro:assets";
+import MainLayout from "src/layouts/MainLayout.astro";
+
+import post05 from "@images/post-05.png";
+---
+
+<MainLayout title="Imagenes">
+  <h1 class="text-5xl text-white">Imágenes</h1>lt="" />
+
+  <Image src={post05} width="250" height="250" alt="imagen del post" />
+
+  <Image
+    style={{
+      width: "250px",
+      height: "250px",
+    }}
+    src={post05}
+    width="250"
+    height="250"
+    alt="imagen del post"
+  />
+
+  <h1>QUALITY LOW</h1>
+  <Image
+    style={{
+      width: "250px",
+      height: "250px",
+    }}
+    src={post05}
+    quality="low"
+    width="250"
+    height="250"
+    alt="imagen del post"
+  />
+
+  <h1>QUALITY HIGH</h1>
+  <Image
+    style={{
+      width: "250px",
+      height: "250px",
+    }}
+    src={post05}
+    quality="high"
+    width="250"
+    height="250"
+    alt="imagen del post"
+  />
+
+  <h1>FORMATOS</h1>
+  <Image
+    style={{
+      width: "250px",
+      height: "250px",
+    }}
+    src={post05}
+    format="avif"
+    width="250"
+    height="250"
+    alt="imagen del post"
+  />
+
+  <h1>pictures</h1>
+  <!-- formats={['webp', 'avif', 'jpeg']} -->
+  <Picture
+    style={{
+      width: "250px",
+      height: "250px",
+    }}
+    src={post05}
+    widths={[240, 540, 720, post05.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${post05.width}px`}
+    width="250"
+    height="250"
+    alt="imagen del post"
+  />
+</MainLayout>
+
+<style>
+  h1 {
+    @apply text-white mt-10;
+  }
+</style>
